@@ -63,7 +63,7 @@ drop view if exists Condition1 cascade;
 create view Condition1 as
 select game_id
 from Rating T1
-where T1.positive_ratings / (T1.positive_ratings + T1.negative_ratings) > 0.8;
+where T1.positive_ratings::float / (T1.positive_ratings + T1.negative_ratings) > 0.8;
 
 drop view if exists Condition2 cascade;
 create view Condition2 as

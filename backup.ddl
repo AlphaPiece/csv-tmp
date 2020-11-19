@@ -12,35 +12,33 @@ CREATE TABLE  Game(
 
 CREATE TABLE Develop(
 	developer TEXT,
-	game_id INTEGER REFERENCES Game(game_id),
-	primary key (developer, game_id)
+	game_id INTEGER REFERENCES Game(game_id)
 );
 
 CREATE TABLE Platform(
 	game_id INTEGER REFERENCES Game(game_id),
-	platform TEXT,
-	primary key (game_id, platform)
+	platform TEXT
 );
 	
 CREATE TABLE Rating(
-	game_id INTEGER PRIMARY KEY REFERENCES Game(game_id),
+	game_id INTEGER REFERENCES Game(game_id),
 	positive_ratings INTEGER,
 	negative_ratings INTEGER
 );
 
 CREATE TABLE Playtime(
-	game_id INTEGER PRIMARY KEY REFERENCES Game(game_id),
+	game_id INTEGER REFERENCES Game(game_id),
 	average_playtime INTEGER,
 	median_playtime INTEGER
 );
 
 CREATE TABLE Language(
-	game_id INTEGER PRIMARY KEY REFERENCES Game(game_id),
+	game_id INTEGER REFERENCES Game(game_id),
 	languages TEXT
 );
 
 CREATE TABLE Price(
-	game_id INTEGER PRIMARY KEY REFERENCES Game(game_id),
+	game_id INTEGER REFERENCES Game(game_id),
 	price FLOAT,
 	discount_price FLOAT
 );
@@ -70,10 +68,6 @@ CREATE TABLE SteamGame(
 
 \COPY SteamGame FROM steam_games.csv WITH csv;
 
-DELETE FROM SteamGame a
-USING SteamGame b
-WHERE a.url <> b.url AND a.name = b.name;
-
 CREATE TABLE SteamData(
 	appid TEXT,
 	name TEXT,
@@ -99,7 +93,3 @@ CREATE TABLE SteamData(
 
 DELETE FROM SteamData
 WHERE appid = 'appid';
-
-DELETE FROM SteamData a
-USING SteamData b
-WHERE a.appid < b.appid AND a.name = b.name;

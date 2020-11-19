@@ -1,0 +1,145 @@
+csc343h-wangzex1=> \i schema.ddl
+psql:schema.ddl:1: NOTICE:  drop cascades to 17 other objects
+DETAIL:  drop cascades to table steamschema.game
+drop cascades to table steamschema.develop
+drop cascades to table steamschema.platform
+drop cascades to table steamschema.rating
+drop cascades to table steamschema.playtime
+drop cascades to table steamschema.language
+drop cascades to table steamschema.price
+drop cascades to table steamschema.steamgame
+drop cascades to table steamschema.steamdata
+drop cascades to view steamschema.mac
+drop cascades to view steamschema.windows
+drop cascades to view steamschema.linux
+drop cascades to table steamschema.q3
+drop cascades to view steamschema.atleastonegood
+drop cascades to view steamschema.condition1
+drop cascades to view steamschema.atleastoneless
+drop cascades to view steamschema.condition2
+DROP SCHEMA
+CREATE SCHEMA
+SET
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+COPY 40834
+DELETE 144
+CREATE TABLE
+COPY 27076
+DELETE 1
+DELETE 42
+csc343h-wangzex1=> \i import.sql
+INSERT 0 18920
+INSERT 0 18920
+psql:import.sql:22: NOTICE:  view "mac" does not exist, skipping
+DROP VIEW
+CREATE VIEW
+psql:import.sql:28: NOTICE:  view "windows" does not exist, skipping
+DROP VIEW
+CREATE VIEW
+psql:import.sql:34: NOTICE:  view "linux" does not exist, skipping
+DROP VIEW
+CREATE VIEW
+INSERT 0 10051
+INSERT 0 18920
+INSERT 0 18920
+INSERT 0 18920
+UPDATE 3060
+UPDATE 1
+UPDATE 40690
+INSERT 0 18920
+csc343h-wangzex1=> \i queries.sql
+psql:queries.sql:9: NOTICE:  table "q1" does not exist, skipping
+DROP TABLE
+CREATE TABLE
+psql:queries.sql:18: NOTICE:  view "englishsupported" does not exist, skipping
+DROP VIEW
+CREATE VIEW
+psql:queries.sql:24: NOTICE:  view "leastplayed" does not exist, skipping
+DROP VIEW
+CREATE VIEW
+psql:queries.sql:35: NOTICE:  view "mostexpensive" does not exist, skipping
+DROP VIEW
+CREATE VIEW
+INSERT 0 3
+psql:queries.sql:57: NOTICE:  table "q2" does not exist, skipping
+DROP TABLE
+CREATE TABLE
+psql:queries.sql:62: NOTICE:  view "condition1" does not exist, skipping
+DROP VIEW
+CREATE VIEW
+psql:queries.sql:68: NOTICE:  view "condition2" does not exist, skipping
+DROP VIEW
+CREATE VIEW
+INSERT 0 0
+psql:queries.sql:91: NOTICE:  table "q3" does not exist, skipping
+DROP TABLE
+CREATE TABLE
+psql:queries.sql:96: NOTICE:  view "atleastonegood" does not exist, skipping
+DROP VIEW
+CREATE VIEW
+DROP VIEW
+CREATE VIEW
+psql:queries.sql:108: NOTICE:  view "atleastoneless" does not exist, skipping
+DROP VIEW
+CREATE VIEW
+DROP VIEW
+CREATE VIEW
+INSERT 0 33
+csc343h-wangzex1=> select * from q1;
+ platform | game_id | price
+----------+---------+--------
+ Linux    |     545 |  19.99
+ Mac      |    5764 |  19.99
+ Windows  |    9778 | 174.95
+(3 rows)
+
+csc343h-wangzex1=> select * from q2;
+ game_id
+---------
+    6879
+(1 row)
+
+csc343h-wangzex1=> select * from q3;
+                           developer
+----------------------------------------------------------------
+ Trashmasters
+ Grapeshot Games,Instinct Games
+ 2K Marin,2K China,Digital Extremes,2K Australia,Blind Squirrel
+ WildWorks, Inc.
+ Xavi Canal, Ben Palgi
+ Chongqing Shangshixuan Technology Co., Ltd.,
+ Nvizzio Creations
+ Capcom Game Studio Vancouver, Inc.
+ Shumkov Dmitriy
+ Madmind Studio
+ Hangar 13,Aspyr (Mac)
+ Handyman Studios
+ Purple Lamp Studios,GolemLabs
+ DiggerWorld Ltd.
+ Noah System,Mgame
+ Lord Kres
+ Creative Assembly, PC Port - Hardlight
+ Expansive Worlds,Avalanche Studios
+ CrazyMoo Games
+ MiaoXi Studio
+ Cornered Rat Software
+ Fredaikis AB
+ WEBZEN
+ DistrictTeam
+ nobodyshot
+ NEOWIZ BLESS STUDIO
+ Reborn Games
+ AGC
+ Behaviour Interactive Inc.
+ CAPCOM
+ Avalanche Publishing
+ Comcept,Inti Creates
+ Phosphor Games Studio
+(33 rows)

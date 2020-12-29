@@ -92,6 +92,67 @@ CREATE VIEW
 DROP VIEW
 CREATE VIEW
 INSERT 0 33
+
+
+/*
+** Discussion 1
+*/
+
+ platform | game_id | price  | average_playtime
+----------+---------+--------+------------------
+ Windows  |   10764 |   0.99 |                1
+ Windows  |   16740 |      0 |                1
+ Windows  |    9778 | 174.95 |                1
+ Windows  |   16429 |   7.99 |                1
+ Linux    |    8866 |      0 |                1
+ Windows  |   12411 |   1.99 |                1
+ Windows  |   13609 |        |                1
+ Windows  |   10129 |      0 |                1
+ Windows  |    9776 |  39.99 |                1
+ Mac      |    8192 |   5.99 |                1
+ Windows  |    8192 |   5.99 |                1
+ Windows  |    3093 |   1.99 |                1
+ Windows  |    1582 |  14.99 |                1
+ Windows  |    7197 |      0 |                1
+ Windows  |   14130 |  12.99 |                1
+ Linux    |     545 |  19.99 |                1
+ Windows  |   17541 |      0 |                1
+ Windows  |     574 |   0.99 |                1
+ Windows  |     140 |      0 |                1
+ Windows  |   13010 |      0 |                1
+ Windows  |    7410 |      0 |                1
+ Windows  |   17507 |   6.99 |                1
+ Windows  |     480 |      0 |                1
+ Windows  |   13990 |   0.99 |                1
+ Windows  |   13636 |   1.99 |                1
+ Windows  |   11761 |   1.99 |                1
+ Windows  |    3984 |      0 |                1
+ Windows  |   13019 |   4.99 |                1
+ Windows  |    9905 |  14.99 |                1
+ Windows  |    3925 |   9.99 |                1
+ Windows  |    8849 |   0.99 |                1
+ Windows  |   13550 |   3.99 |                1
+ Windows  |    5736 |  19.99 |                1
+ Windows  |   14726 |   9.99 |                1
+ Mac      |    3224 |   5.99 |                1
+ Windows  |    3224 |   5.99 |                1
+ Windows  |   15096 |   6.99 |                1
+ Windows  |     179 |   6.99 |                1
+ Mac      |    5764 |  19.99 |                1
+ Windows  |    5764 |  19.99 |                1
+ Windows  |    2230 |  19.99 |                1
+ Windows  |   16597 |      0 |                1
+ Windows  |   11521 |   5.99 |                1
+ Windows  |    1387 |      0 |                1
+ Windows  |    8009 |   1.99 |                1
+ Windows  |   13000 |   0.99 |                1
+(46 rows)
+
+
+/*
+** Question 1
+*/
+
 csc343h-wangzex1=> select * from q1;
  platform | game_id | price
 ----------+---------+--------
@@ -100,11 +161,19 @@ csc343h-wangzex1=> select * from q1;
  Windows  |    9778 | 174.95
 (3 rows)
 
+/*
+** Question 2
+*/
+
 csc343h-wangzex1=> select * from q2;
  game_id
 ---------
     6879
 (1 row)
+
+/*
+** Question 3
+*/
 
 csc343h-wangzex1=> select * from q3;
                            developer

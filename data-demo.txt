@@ -1,0 +1,256 @@
+csc343h-wangzex1=> \i schema.ddl
+psql:schema.ddl:1: NOTICE:  drop cascades to 9 other objects
+DETAIL:  drop cascades to table game
+drop cascades to table develop
+drop cascades to table platform
+drop cascades to table rating
+drop cascades to table playtime
+drop cascades to table language
+drop cascades to table price
+drop cascades to table steamgame
+drop cascades to table steamdata
+DROP SCHEMA
+CREATE SCHEMA
+SET
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+COPY 40834
+DELETE 144
+CREATE TABLE
+COPY 27076
+DELETE 1
+DELETE 42
+INSERT 0 18920
+INSERT 0 18920
+CREATE TABLE
+INSERT 0 1851
+CREATE TABLE
+INSERT 0 18768
+CREATE TABLE
+INSERT 0 748
+INSERT 0 10051
+DROP TABLE
+DROP TABLE
+DROP TABLE
+INSERT 0 18920
+INSERT 0 18920
+INSERT 0 18920
+UPDATE 3060
+UPDATE 1
+UPDATE 40690
+INSERT 0 18920
+csc343h-wangzex1=> select count(*) from Game
+csc343h-wangzex1-> ;
+ count
+-------
+ 18920
+(1 row)
+
+csc343h-wangzex1=> select count(*) from Develop;
+ count
+-------
+ 18920
+(1 row)
+
+csc343h-wangzex1=> select count(*) from Platform;
+ count
+-------
+ 10051
+(1 row)
+
+csc343h-wangzex1=> select count(*) from Rating;
+ count
+-------
+ 18920
+(1 row)
+
+csc343h-wangzex1=> select count(*) from Playtime;
+ count
+-------
+ 18920
+(1 row)
+
+csc343h-wangzex1=> select count(*) from Language;
+ count
+-------
+ 18920
+(1 row)
+
+csc343h-wangzex1=> select count(*) from Price;
+ count
+-------
+ 18920
+(1 row)
+
+csc343h-wangzex1=> select * from Game where game_id < 10;
+ game_id |                      game_title                      |                                         genre                                          | release_date |         developer
+---------+------------------------------------------------------+----------------------------------------------------------------------------------------+--------------+----------------------------
+       1 | Russian Fishing 4                                    | Adventure,Casual,Free to Play,Massively Multiplayer,RPG,Simulation,Sports,Early Access | Jun 15, 2018 | Russian Fishing
+       2 | 机能女孩-Energy Girl                                 | Adventure,Indie,RPG,Simulation,Strategy                                                | Oct 30, 2018 | LiveActive
+       3 | Romance of the Three Kingdoms Maker / 三国志ツクール | Simulation                                                                             | Dec 9, 2015  | KOEI TECMO GAMES CO., LTD.
+       4 | Bleep Bloop                                          | Casual,Indie                                                                           | Jan 31, 2019 | Ludipe & Friends
+       5 | Heartbreak High: A Break-Up Simulator                | Casual,Indie,Simulation                                                                | May 21, 2018 | Good Bit,Alec Robbins
+       6 | Hardcore Weapon Challenge - FPS Action               | Action,Indie,Early Access                                                              | Jun 14, 2018 | Gamungu
+       7 | Bud Spencer & Terence Hill - Slaps And Beans         | Action,Adventure,Indie                                                                 | Dec 15, 2017 | Trinity Team srls
+       8 | Affliction                                           | Action,Adventure,Indie                                                                 | Oct 25, 2017 | Corrosive Studios LLC
+       9 | Pixeloids                                            | Indie                                                                                  | Jul 9, 2016  | Kelint
+(9 rows)
+
+csc343h-wangzex1=> select * from Develop where game_id < 10;
+         developer          | game_id
+----------------------------+---------
+ Russian Fishing            |       1
+ LiveActive                 |       2
+ KOEI TECMO GAMES CO., LTD. |       3
+ Ludipe & Friends           |       4
+ Good Bit,Alec Robbins      |       5
+ Gamungu                    |       6
+ Trinity Team srls          |       7
+ Corrosive Studios LLC      |       8
+ Kelint                     |       9
+(9 rows)
+
+csc343h-wangzex1=> select * from Platform where game_id < 30;
+ game_id | platform
+---------+----------
+       1 | Windows
+       4 | Windows
+       6 | Windows
+       7 | Mac
+       7 | Windows
+      10 | Windows
+      11 | Windows
+      12 | Windows
+      14 | Windows
+      16 | Windows
+      17 | Windows
+      18 | Mac
+      18 | Windows
+      22 | Windows
+      23 | Windows
+      25 | Mac
+      25 | Windows
+      29 | Windows
+(18 rows)
+
+csc343h-wangzex1=> select * from Rating where game_id < 30;
+ game_id | positive_ratings | negative_ratings
+---------+------------------+------------------
+       8 |               20 |               14
+      18 |              139 |               50
+      28 |              919 |              534
+      10 |                9 |               15
+       4 |                4 |                1
+       7 |              702 |               44
+      14 |                2 |                1
+      27 |                3 |                1
+      20 |               19 |                2
+      23 |             1718 |              696
+      19 |               11 |               15
+      24 |             1078 |               53
+      16 |               46 |                8
+       6 |                6 |                5
+      26 |                3 |                1
+      13 |                1 |                1
+       5 |               15 |                2
+      12 |               89 |              132
+      22 |              175 |              301
+      21 |                7 |                5
+      11 |                1 |                1
+      15 |               25 |                9
+      25 |              587 |              269
+       9 |                0 |                1
+       3 |              102 |               65
+       1 |             2103 |             1062
+      29 |               28 |               70
+      17 |              197 |               83
+       2 |                1 |                1
+(29 rows)
+
+csc343h-wangzex1=> select * from Playtime where game_id < 30;
+ game_id | average_playtime | median_playtime
+---------+------------------+-----------------
+       8 |                0 |               0
+      18 |                0 |               0
+      28 |              463 |             427
+      10 |                0 |               0
+       4 |                0 |               0
+       7 |                0 |               0
+      14 |                0 |               0
+      27 |                0 |               0
+      20 |                0 |               0
+      23 |              557 |             804
+      19 |                0 |               0
+      24 |                0 |               0
+      16 |                0 |               0
+       6 |                0 |               0
+      26 |                0 |               0
+      13 |                0 |               0
+       5 |                0 |               0
+      12 |                0 |               0
+      22 |              119 |             176
+      21 |                0 |               0
+      11 |                0 |               0
+      15 |                0 |               0
+      25 |                0 |               0
+       9 |                0 |               0
+       3 |                1 |               1
+       1 |             5647 |             597
+      29 |                0 |               0
+      17 |                0 |               0
+       2 |                0 |               0
+(29 rows)
+
+csc343h-wangzex1=> select * from Language where game_id < 10;
+ game_id |                                                                                                                                              languages
+---------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+       8 | English
+       4 | English,French,Italian,German,Spanish - Spain,Bulgarian,Czech,Simplified Chinese,Traditional Chinese,Korean,Danish,Spanish - Latin America,Finnish,Greek,Dutch,Hungarian,Japanese,Norwegian,Polish,Portuguese,Portuguese - Brazil,Romanian,Russian,Swedish,Thai,Turkish,Ukrainian,Vietnamese,Arabic
+       7 | English,French,Italian,German,Spanish - Spain,Czech,Danish,Portuguese - Brazil,Hungarian,Russian,Simplified Chinese,Japanese
+       6 | English,Turkish
+       5 | English
+       9 | English
+       3 | English,Japanese
+       1 | English,German,Russian,Simplified Chinese,French,Spanish - Spain,Polish,Portuguese - Brazil,Dutch,Korean,Japanese,Traditional Chinese
+       2 | English,Simplified Chinese
+(9 rows)
+
+csc343h-wangzex1=> select * from Price where game_id < 30;
+ game_id | price | discount_price
+---------+-------+----------------
+       8 |  4.99 |           9.56
+      18 |  0.99 |
+      28 |  4.99 |
+      10 |     0 |
+       4 |  3.99 |
+       7 | 19.99 |
+      14 |  2.99 |           15.1
+      27 |  2.99 |
+      20 |  7.99 |           4.79
+      23 |     0 |
+      19 |  1.99 |
+      24 |  9.99 |
+      16 | 14.99 |          19.98
+       6 |  2.99 |
+      26 |  9.99 |           26.9
+      13 |  9.99 |           26.9
+       5 |  4.99 |           7.63
+      12 | 19.99 |
+      22 |  4.99 |            707
+      21 |  4.99 |
+      11 |  8.99 |
+      15 |  7.99 |           36.8
+      25 |  9.99 |
+       9 |  3.99 |
+       3 |  9.99 |
+       1 |     0 |
+      29 |  4.99 |
+      17 | 29.99 |
+       2 |  3.99 |
+(29 rows)
